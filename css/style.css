@@ -299,6 +299,8 @@ h6 {
   width: 100%;
   top: 0;
   z-index: 50;
+  border-top: 2px solid #bf4f4b;
+  margin-bottom: -2px;
 }
 
 .header__container {
@@ -327,7 +329,9 @@ h6 {
 }
 
 .footer {
-  margin-top: 1.25em;
+  background: #2c364a;
+  margin-top: 2.5em;
+  padding: 0.9375em 0;
 }
 
 .footer__list {
@@ -360,7 +364,7 @@ h6 {
 }
 
 .footer__link {
-  color: rgb(163, 162, 162);
+  color: #ffffff;
   font-weight: 800;
   line-height: 1.2;
   -webkit-transition: all 0.3s ease 0s;
@@ -499,7 +503,6 @@ h6 {
 }
 
 .form__grad {
-  overflow: hidden;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -542,6 +545,7 @@ h6 {
   font-weight: 800;
   font-size: 1.5625em;
   cursor: pointer;
+  text-shadow: 1px 1px 1px #464646;
 }
 
 .form__rating-item:hover {
@@ -624,12 +628,14 @@ h6 {
   min-height: 4.375em;
   border-radius: 0.3125em;
   background-color: rgb(255, 255, 255);
-  border: 1px solid rgba(34, 34, 34, 0.447);
+  outline: 1px solid rgba(34, 34, 34, 0.447);
   resize: none;
-  outline: none;
   font-weight: 800;
   color: rgb(83, 83, 83);
   line-height: 1.2;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .form__textarea::-webkit-input-placeholder {
@@ -652,8 +658,8 @@ h6 {
   font-weight: 300;
 }
 
-.form__textarea:active {
-  outline: 0;
+.form__textarea:focus {
+  border: 2px solid rgba(40, 40, 40, 0.084);
 }
 
 .form__button {
@@ -679,7 +685,7 @@ h6 {
 }
 
 .main__thanks {
-  margin-top: 8.125em;
+  margin-top: 2.5em;
 }
 
 .thanks {
@@ -728,12 +734,43 @@ h6 {
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .thanks__button:hover {
   background-color: #ffffff;
   outline: rgb(135, 185, 105) 1.5px solid;
   color: rgb(135, 185, 105);
+}
+
+@media (max-width: 1035px) {
+  .thanks__content {
+    margin: 0 9.375em;
+  }
+}
+
+@media (max-width: 757px) {
+  .thanks__content {
+    margin: 0 5em;
+  }
+}
+
+@media (max-width: 615px) {
+  .thanks__content {
+    margin: 0;
+  }
+}
+
+@media (max-width: 460px) {
+  .thanks__content {
+    padding: 2.5em;
+  }
+}
+
+@media (max-width: 392px) {
+  .thanks__content {
+    font-size: 0.8125em;
+  }
 }
 
 @media (max-width: 64.375em) {
