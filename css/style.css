@@ -383,7 +383,7 @@ h6 {
   display: inline-flex;
 }
 
-.footer__logo svg {
+.footer__logo img {
   width: 2.625em;
   height: 2.625em;
 }
@@ -463,7 +463,7 @@ h6 {
 }
 
 .no-webp .form__label-bad::before{
-  background: url("../img/bad.png") no-repeat; }
+  background-image: url("../img/bad.png"); }
 
 .form__label-bad::before {
   background-size: 100%;
@@ -474,7 +474,7 @@ h6 {
 }
 
 .no-webp .form__label-normal::before{
-  background: url("../img/good.png") no-repeat; }
+  background-image: url("../img/good.png"); }
 
 .form__label-normal::before {
   background-size: 100%;
@@ -485,7 +485,7 @@ h6 {
 }
 
 .no-webp .form__label-great::before{
-  background: url("../img/great.png") no-repeat; }
+  background-image: url("../img/great.png"); }
 
 .form__label-great::before {
   background-size: 100%;
@@ -536,13 +536,127 @@ h6 {
 }
 
 .form__grad.active .form__rating-item {
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
+  background: #b0b0b0;
 }
 
-.form__grad.active .form__rating-item.active {
-  -webkit-filter: none;
-          filter: none;
+.form__grad.active .form__rating-item.active.form__rating-item-1 {
+  background: #b0b0b0;
+}
+
+.form__grad.active .form__rating-item.active.form__rating-item-1.active {
+  opacity: 0.5;
+  background: -webkit-gradient(linear, left top, right top, from(#ffa6a6), to(#ffaca6));
+  background: -o-linear-gradient(left, #ffa6a6, #ffaca6);
+  background: linear-gradient(to right, #ffa6a6, #ffaca6);
+}
+
+.form__grad.active .form__rating-item.active.form__rating-item-2 {
+  background: #b0b0b0;
+}
+
+.form__grad.active .form__rating-item.active.form__rating-item-2.active {
+  opacity: 0.5;
+  background: -webkit-gradient(linear, left top, right top, from(#ffaca6), to(#ffb9a6));
+  background: -o-linear-gradient(left, #ffaca6, #ffb9a6);
+  background: linear-gradient(to right, #ffaca6, #ffb9a6);
+}
+
+.form__grad.active .form__rating-item.active.form__rating-item-3 {
+  background: #b0b0b0;
+}
+
+.form__grad.active .form__rating-item.active.form__rating-item-3.active {
+  opacity: 0.5;
+  background: -webkit-gradient(linear, left top, right top, from(#ffb9a6), to(#ffd0a6));
+  background: -o-linear-gradient(left, #ffb9a6, #ffd0a6);
+  background: linear-gradient(to right, #ffb9a6, #ffd0a6);
+}
+
+.form__grad.active .form__rating-item.active.form__rating-item-4 {
+  background: #b0b0b0;
+}
+
+.form__grad.active .form__rating-item.active.form__rating-item-4.active {
+  opacity: 0.5;
+  background: -webkit-gradient(linear, left top, right top, from(#ffd0a6), to(#ffd5a6));
+  background: -o-linear-gradient(left, #ffd0a6, #ffd5a6);
+  background: linear-gradient(to right, #ffd0a6, #ffd5a6);
+}
+
+.form__grad.active .form__rating-item.active.form__rating-item-5 {
+  background: #b0b0b0;
+}
+
+.form__grad.active .form__rating-item.active.form__rating-item-5.active {
+  opacity: 0.5;
+  background: -webkit-gradient(linear, left top, right top, from(#ffd5a6), to(#ffefa6));
+  background: -o-linear-gradient(left, #ffd5a6, #ffefa6);
+  background: linear-gradient(to right, #ffd5a6, #ffefa6);
+}
+
+.form__grad.active .form__rating-item.active.form__rating-item-6 {
+  background: #b0b0b0;
+}
+
+.form__grad.active .form__rating-item.active.form__rating-item-6.active {
+  opacity: 0.5;
+  background: -webkit-gradient(linear, left top, right top, from(#ffefa6), to(#fcffa6));
+  background: -o-linear-gradient(left, #ffefa6, #fcffa6);
+  background: linear-gradient(to right, #ffefa6, #fcffa6);
+}
+
+.form__grad.active .form__rating-item.active.form__rating-item-7 {
+  background: #b0b0b0;
+}
+
+.form__grad.active .form__rating-item.active.form__rating-item-7.active {
+  opacity: 0.5;
+  background: -webkit-gradient(linear, left top, right top, from(#fcffa6), to(#ecffa6));
+  background: -o-linear-gradient(left, #fcffa6, #ecffa6);
+  background: linear-gradient(to right, #fcffa6, #ecffa6);
+}
+
+.form__grad.active .form__rating-item.active.form__rating-item-8 {
+  background: #b0b0b0;
+}
+
+.form__grad.active .form__rating-item.active.form__rating-item-8.active {
+  opacity: 0.5;
+  background: -webkit-gradient(linear, left top, right top, from(#ecffa6), to(#daffa6));
+  background: -o-linear-gradient(left, #ecffa6, #daffa6);
+  background: linear-gradient(to right, #ecffa6, #daffa6);
+}
+
+.form__grad.active .form__rating-item.active.form__rating-item-9 {
+  background: #b0b0b0;
+}
+
+.form__grad.active .form__rating-item.active.form__rating-item-9.active {
+  opacity: 0.5;
+  background: -webkit-gradient(linear, left top, right top, from(#daffa6), to(#c5ffa6));
+  background: -o-linear-gradient(left, #daffa6, #c5ffa6);
+  background: linear-gradient(to right, #daffa6, #c5ffa6);
+}
+
+.form__grad.active .form__rating-item.active.form__rating-item-10 {
+  background: #b0b0b0;
+}
+
+.form__grad.active .form__rating-item.active.form__rating-item-10.active {
+  opacity: 0.5;
+  background: -webkit-gradient(linear, left top, right top, from(#c5ffa6), to(#b8ffa6));
+  background: -o-linear-gradient(left, #c5ffa6, #b8ffa6);
+  background: linear-gradient(to right, #c5ffa6, #b8ffa6);
+}
+
+.form__grad.active .form__rating-item.active.form__rating-item.current-active {
+  opacity: 1;
+  width: 3.125rem;
+  height: 3.125rem;
+}
+
+.form__grad.active .form__rating-item.active.form__rating-item.mouse-active {
+  opacity: 1;
 }
 
 .form__rating-item {
@@ -563,78 +677,108 @@ h6 {
   font-size: 1.5625em;
   cursor: pointer;
   text-shadow: 1px 1px 1px #464646;
-  background: #b0b0b0;
   overflow: hidden;
+  opacity: 0.5;
 }
 
-.form__rating-item-1.active {
-  opacity: 0.5;
+.form__rating-item-1 {
   background: -webkit-gradient(linear, left top, right top, from(#ffa6a6), to(#ffaca6));
   background: -o-linear-gradient(left, #ffa6a6, #ffaca6);
   background: linear-gradient(to right, #ffa6a6, #ffaca6);
 }
 
-.form__rating-item-2.active {
+.form__rating-item-1.active {
   opacity: 0.5;
+}
+
+.form__rating-item-2 {
   background: -webkit-gradient(linear, left top, right top, from(#ffaca6), to(#ffb9a6));
   background: -o-linear-gradient(left, #ffaca6, #ffb9a6);
   background: linear-gradient(to right, #ffaca6, #ffb9a6);
 }
 
-.form__rating-item-3.active {
+.form__rating-item-2.active {
   opacity: 0.5;
+}
+
+.form__rating-item-3 {
   background: -webkit-gradient(linear, left top, right top, from(#ffb9a6), to(#ffd0a6));
   background: -o-linear-gradient(left, #ffb9a6, #ffd0a6);
   background: linear-gradient(to right, #ffb9a6, #ffd0a6);
 }
 
-.form__rating-item-4.active {
+.form__rating-item-3.active {
   opacity: 0.5;
+}
+
+.form__rating-item-4 {
   background: -webkit-gradient(linear, left top, right top, from(#ffd0a6), to(#ffd5a6));
   background: -o-linear-gradient(left, #ffd0a6, #ffd5a6);
   background: linear-gradient(to right, #ffd0a6, #ffd5a6);
 }
 
-.form__rating-item-5.active {
+.form__rating-item-4.active {
   opacity: 0.5;
+}
+
+.form__rating-item-5 {
   background: -webkit-gradient(linear, left top, right top, from(#ffd5a6), to(#ffefa6));
   background: -o-linear-gradient(left, #ffd5a6, #ffefa6);
   background: linear-gradient(to right, #ffd5a6, #ffefa6);
 }
 
-.form__rating-item-6.active {
+.form__rating-item-5.active {
   opacity: 0.5;
+}
+
+.form__rating-item-6 {
   background: -webkit-gradient(linear, left top, right top, from(#ffefa6), to(#fcffa6));
   background: -o-linear-gradient(left, #ffefa6, #fcffa6);
   background: linear-gradient(to right, #ffefa6, #fcffa6);
 }
 
-.form__rating-item-7.active {
+.form__rating-item-6.active {
   opacity: 0.5;
+}
+
+.form__rating-item-7 {
   background: -webkit-gradient(linear, left top, right top, from(#fcffa6), to(#ecffa6));
   background: -o-linear-gradient(left, #fcffa6, #ecffa6);
   background: linear-gradient(to right, #fcffa6, #ecffa6);
 }
 
-.form__rating-item-8.active {
+.form__rating-item-7.active {
   opacity: 0.5;
+}
+
+.form__rating-item-8 {
   background: -webkit-gradient(linear, left top, right top, from(#ecffa6), to(#daffa6));
   background: -o-linear-gradient(left, #ecffa6, #daffa6);
   background: linear-gradient(to right, #ecffa6, #daffa6);
 }
 
-.form__rating-item-9.active {
+.form__rating-item-8.active {
   opacity: 0.5;
+}
+
+.form__rating-item-9 {
   background: -webkit-gradient(linear, left top, right top, from(#daffa6), to(#c5ffa6));
   background: -o-linear-gradient(left, #daffa6, #c5ffa6);
   background: linear-gradient(to right, #daffa6, #c5ffa6);
 }
 
-.form__rating-item-10.active {
+.form__rating-item-9.active {
   opacity: 0.5;
+}
+
+.form__rating-item-10 {
   background: -webkit-gradient(linear, left top, right top, from(#c5ffa6), to(#b8ffa6));
   background: -o-linear-gradient(left, #c5ffa6, #b8ffa6);
   background: linear-gradient(to right, #c5ffa6, #b8ffa6);
+}
+
+.form__rating-item-10.active {
+  opacity: 0.5;
 }
 
 .form__rating-item.current-active {
@@ -923,8 +1067,8 @@ h6 {
   }
 }
 
-.webp .form__label-bad::before{ background: url(../img/bad.webp) no-repeat; }
+.webp .form__label-bad::before{ background-image: url(../img/bad.webp); }
 
-.webp .form__label-normal::before{ background: url(../img/good.webp) no-repeat; }
+.webp .form__label-normal::before{ background-image: url(../img/good.webp); }
 
-.webp .form__label-great::before{ background: url(../img/great.webp) no-repeat; }
+.webp .form__label-great::before{ background-image: url(../img/great.webp); }
