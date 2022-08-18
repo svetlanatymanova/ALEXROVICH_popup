@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220814230308">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220818144254">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,9 +17,7 @@
 		<header class="header">
 			<div class="header__container">
 				<a href="http://alexrovich.ru/?utm_source=nps" class="header__logo logo">
-					<svg>
-						<use href="img/icons/icons.svg#logo"></use>
-					</svg>
+					<picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="logo"></picture>
 				</a>
 			</div>
 		</header>
@@ -30,19 +28,13 @@
 
 					<div class="form__how">
 						<h2 class="form__title">Как Ваше обращение было обработано?</h2>
-						<div class="form__row">
-							<div class="form__radio form__radio-bad">
-								<input type="radio" value="bad" name="mark" id="bad" class="form__input">
-								<label class="form__label" for="bad"><span>Плохо</span></label>
-							</div>
-							<div class="form__radio form__radio-normal">
-								<input type="radio" value="normal" name="mark" id="normal" class="form__input">
-								<label class="form__label" for="normal"><span>Хорошо</span></label>
-							</div>
-							<div class="form__radio form__radio-great">
-								<input type="radio" value="great" name="mark" id="great" class="form__input">
-								<label class="form__label" for="great"><span>Отлично</span></label>
-							</div>
+						<div data-required="radio" data-validate data-error="Выберите смайл!" class="form__row">
+							<input type="radio" value="bad" name="mark" id="bad" class="form__input">
+							<label class="form__label-bad form__label" for="bad"><span>Плохо</span></label>
+							<input type="radio" value="normal" name="mark" id="normal" class="form__input">
+							<label class="form__label-normal form__label" for="normal"><span>Хорошо</span></label>
+							<input type="radio" value="great" name="mark" id="great" class="form__input">
+							<label class="form__label-great form__label" for="great"><span>Отлично</span></label>
 						</div>
 					</div>
 					<div class="form__mark">
@@ -50,7 +42,7 @@
 							партнёрам?
 						</h2>
 						<div class="form__rating">
-							<div class="form__grad">
+							<div data-required="radio" data-error="Выберите оценку!" class="form__grad">
 								<input type="radio" name="rating" id="rating-1" value="1">
 								<label for="rating-1" class="form__rating-item form__rating-item-1">1</label>
 
@@ -85,13 +77,14 @@
 						</div>
 					</div>
 
-					<div class="form__how">
+					<div class="form__message hidden">
 						<h2 class="form__title">Почему Вы поставили нам такую оценку? Будем благодарны за подробный
 							ответ.</h2>
-						<textarea placeholder="Ваш ответ:" class="form__textarea" name="#" id="textarea"></textarea>
+						<textarea data-required data-error="Введите подробный ответ!" placeholder="Ваш ответ:" class="form__textarea" name="#" id="textarea"></textarea>
 					</div>
 					<button class="form__button" type="submit">Отправить</button>
 				</div>
+
 
 			</form>
 			<div class="main__thanks thanks">
@@ -114,9 +107,9 @@
 						<a class="footer__link" href="http://alexrovich.ru/projects/?utm_source=nps">Кейсы компании</a>
 					</li>
 
-					<li>
+					<li class="footer__logo">
 
-						<a class="footer__link footer__logo" href="http://alexrovich.ru/?utm_source=nps">
+						<a class="footer__link" href="http://alexrovich.ru/?utm_source=nps">
 							<svg>
 								<use href="img/icons/icons.svg#minlogo"></use>
 							</svg>
@@ -137,12 +130,13 @@
 
 	</div>
 
+	</div>
 	<!--<div id="popup" aria-hidden="true" class="popup">
 	<div class="popup__wrapper">
 
 	</div>
 </div>-->
-	<script src="js/app.min.js?_v=20220814230308"></script>
+	<script src="js/app.min.js?_v=20220818144254"></script>
 </body>
 
 </html>

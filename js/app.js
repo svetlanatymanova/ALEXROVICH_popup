@@ -523,21 +523,21 @@
                 let error = 0;
                 let formRequiredItems = form.querySelectorAll("*[data-required]");
                 if (formRequiredItems.length) formRequiredItems.forEach((formRequiredItem => {
-                    if ((null !== formRequiredItem.offsetParent || "SELECT" === formRequiredItem.tagName) && !formRequiredItem.disabled) error += this.validateInput(formRequiredItem);
+                    if (!formRequiredItem.disabled) error += this.validateInput(formRequiredItem);
                 }));
                 return error;
             },
             validateInput(formRequiredItem) {
                 let error = 0;
-                if ("email" === formRequiredItem.dataset.required) {
-                    formRequiredItem.value = formRequiredItem.value.replace(" ", "");
-                    if (this.emailTest(formRequiredItem)) {
+                if ("radio" == formRequiredItem.dataset.required) {
+                    function isCheck() {
+                        for (let i = 0; i < formRequiredItem.children.length; i += 2) if (formRequiredItem.children[i].checked) return true;
+                        return false;
+                    }
+                    if (!isCheck()) {
                         this.addError(formRequiredItem);
                         error++;
-                    } else this.removeError(formRequiredItem);
-                } else if ("checkbox" === formRequiredItem.type && !formRequiredItem.checked) {
-                    this.addError(formRequiredItem);
-                    error++;
+                    }
                 } else if (!formRequiredItem.value.trim()) {
                     this.addError(formRequiredItem);
                     error++;
@@ -660,13 +660,14 @@
             viewPass: false
         });
         formSubmit();
-        if (document.querySelectorAll(".form__radio")) {
+        if (document.querySelectorAll(".form__label")) {
             const row = document.querySelector(".form__row");
-            const smiles = document.querySelectorAll(".form__radio");
+            const smiles = document.querySelectorAll(".form__label");
             smiles.forEach((function(smile) {
                 smile.addEventListener("click", (function() {
                     row.classList.add("active");
-                    if (smile.classList.contains("form__radio-bad")) document.querySelector(".wrapper").style.background = "linear-gradient( -72deg, rgb(252,198,198) 0%, rgb(254,227,227) 36%, rgb(255,255,255) 100%)"; else if (smile.classList.contains("form__radio-normal")) document.querySelector(".wrapper").style.background = "linear-gradient( 50deg, rgb(255,255,255) 0%, rgb(253,254,218) 65%, rgb(250,253,181) 100%)"; else if (smile.classList.contains("form__radio-great")) document.querySelector(".wrapper").style.background = "linear-gradient( 50deg, rgb(255,255,255) 0%, rgb(231,255,205) 64%, rgb(102, 255, 82) 100%)";
+                    if (smile.classList.contains("form__label-bad")) document.querySelector(".wrapper").style.background = "linear-gradient( -72deg, rgb(252,198,198) 0%, rgb(254,227,227) 36%, rgb(255,255,255) 100%)"; else if (smile.classList.contains("form__label-normal")) document.querySelector(".wrapper").style.background = "linear-gradient( 50deg, rgb(255,255,255) 0%, rgb(253,254,218) 65%, rgb(250,253,181) 100%)"; else if (smile.classList.contains("form__label-great")) document.querySelector(".wrapper").style.background = "linear-gradient( 50deg, rgb(255,255,255) 0%, rgb(231,255,205) 64%, rgb(102, 255, 82) 100%)";
+                    unhidden();
                 }));
             }));
         }
@@ -677,13 +678,15 @@
                 removeClass(ratingItem, "current-active");
                 target.classList.add("active", "current-active");
                 grad.classList.add("active");
+                unhidden();
             }
         };
         rating.onmouseover = function(e) {
             let target = e.target;
             if (target.classList.contains("form__rating-item")) {
                 removeClass(ratingItem, "active");
-                target.classList.add("active");
+                removeClass(ratingItem, "mouse-active");
+                target.classList.add("active", "mouse-active");
                 mouseOverActiveClass(ratingItem);
             }
         };
@@ -701,7 +704,13 @@
             for (let i = 0, iLen = arr.length; i < iLen; i++) if (arr[i].classList.contains("active")) break; else arr[i].classList.add("active");
         }
         function mouseOutActiveClas(arr) {
-            for (let i = arr.length - 1; i >= 1; i--) if (arr[i].classList.contains("current-active")) break; else arr[i].classList.remove("active");
+            for (let i = arr.length - 1; i >= 1; i--) if (arr[i].classList.contains("current-active")) {
+                removeClass(ratingItem, "mouse-active");
+                break;
+            } else arr[i].classList.remove("active");
+        }
+        function unhidden() {
+            if (document.querySelector(".form__row").classList.contains("active") && document.querySelector(".form__grad").classList.contains("active")) document.querySelector(".form__message").classList.remove("hidden");
         }
     })();
 })();
