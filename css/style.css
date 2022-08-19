@@ -507,38 +507,29 @@ h6 {
 
 .form__rating {
   margin-top: 1.875em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .form__grad {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  gap: 1.0625em;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1.0625em;
 }
 
 .form__grad input {
   display: none;
+}
+
+.form__grad label {
+  display: block;
 }
 
 .form__grad.active .form__rating-item {
@@ -666,9 +657,17 @@ h6 {
 }
 
 .form__rating-item {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -683,7 +682,20 @@ h6 {
   font-size: 1.5625em;
   cursor: pointer;
   text-shadow: 1px 1px 1px #464646;
-  overflow: hidden;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.form__rating-item::before {
+  content: "";
+  padding: 1.25em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .form__rating-item-1 {
@@ -936,6 +948,7 @@ h6 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-weight: 800;
   border-radius: 5px;
   background-color: rgb(135, 185, 105);
   padding: 0.9375em 4.375em;
@@ -947,16 +960,16 @@ h6 {
   white-space: nowrap;
 }
 
-@supports (font-size: clamp( 0.625rem , 0.55rem  +  0.375vw , 1rem )) {
+@supports (font-size: clamp( 1rem , 0.9625rem  +  0.1875vw , 1.1875rem )) {
   .thanks__button {
-    font-size: clamp( 0.625rem , 0.55rem  +  0.375vw , 1rem );
+    font-size: clamp( 1rem , 0.9625rem  +  0.1875vw , 1.1875rem );
   }
 }
 
-@supports not (font-size: clamp( 0.625rem , 0.55rem  +  0.375vw , 1rem )) {
+@supports not (font-size: clamp( 1rem , 0.9625rem  +  0.1875vw , 1.1875rem )) {
   .thanks__button {
     font-size: calc(
-			0.625rem + 0.375 * (100vw - 20rem) / 100
+			1rem + 0.1875 * (100vw - 20rem) / 100
 		);
   }
 }
