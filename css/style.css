@@ -382,25 +382,28 @@ h6 {
   color: #ffffff;
   font-weight: 800;
   line-height: 1;
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
   text-align: center;
+  margin-bottom: -1px;
 }
 
 .footer__link:hover {
-  text-decoration: underline;
+  border-bottom: 1px solid rgb(255, 255, 255);
 }
 
 .footer__logo {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  margin-bottom: 0;
 }
 
 .footer__logo img {
   width: 2.625em;
   height: 2.625em;
+}
+
+.footer__logo .footer__link:hover {
+  border-bottom: 0px solid rgb(255, 255, 255);
 }
 
 .main {
@@ -451,6 +454,11 @@ h6 {
 .form__row.active .form__input:checked + .form__label {
   -webkit-filter: none;
           filter: none;
+}
+
+.form__row.active .form__input:checked + .form__label::before {
+  width: 5.625em;
+  height: 5.625em;
 }
 
 .form__row.active .form__input:checked + .form__label:hover {
