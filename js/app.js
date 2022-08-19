@@ -684,6 +684,7 @@
         rating.onmouseover = function(e) {
             let target = e.target;
             if (target.classList.contains("form__rating-item")) {
+                grad.classList.add("active");
                 removeClass(ratingItem, "active");
                 removeClass(ratingItem, "mouse-active");
                 target.classList.add("active", "mouse-active");
@@ -710,7 +711,10 @@
             } else arr[i].classList.remove("active");
         }
         function unhidden() {
-            if (document.querySelector(".form__row").classList.contains("active") && document.querySelector(".form__grad").classList.contains("active")) document.querySelector(".form__message").classList.remove("hidden");
+            if (document.querySelector(".form__row").classList.contains("active") && document.querySelector(".form__grad").classList.contains("active")) {
+                document.querySelector(".form__message").classList.remove("hidden");
+                document.querySelector(".form__button").classList.add("active");
+            }
         }
     })();
 })();
