@@ -346,6 +346,21 @@ h6 {
           justify-content: space-between;
   padding: 0 4.375em;
   gap: 0.625em;
+  font-size: 1em;
+}
+
+@supports (font-size: clamp( 1.125rem , 1.5833333333rem  +  -1.6666666667vw , 1.25rem )) {
+  .footer__list {
+    font-size: clamp( 1.125rem , 1.5833333333rem  +  -1.6666666667vw , 1.25rem );
+  }
+}
+
+@supports not (font-size: clamp( 1.125rem , 1.5833333333rem  +  -1.6666666667vw , 1.25rem )) {
+  .footer__list {
+    font-size: calc(
+			1.25rem + -0.125 * (100vw - 20rem) / 7.5
+		);
+  }
 }
 
 .footer__list li {
@@ -427,7 +442,6 @@ h6 {
 .form__row.active .form__label:hover {
   -webkit-filter: grayscale(0);
           filter: grayscale(0);
-  opacity: 0.5;
 }
 
 .form__row.active .form__label span {
@@ -462,6 +476,14 @@ h6 {
   height: 5em;
   display: block;
   margin-bottom: 0.4375rem;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.form__label:hover::before {
+  width: 5.625em;
+  height: 5.625em;
 }
 
 .form__label-bad {
@@ -1045,6 +1067,7 @@ h6 {
 
 @media (max-width: 40.3125em) {
   .footer__list {
+    padding: 0;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
